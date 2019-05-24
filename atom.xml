@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yulang.xyz/"/>
-  <updated>2019-05-24T04:42:52.286Z</updated>
+  <updated>2019-05-24T05:34:19.687Z</updated>
   <id>https://yulang.xyz/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>yu</title>
+    <link href="https://yulang.xyz/2019/05/24/yu/"/>
+    <id>https://yulang.xyz/2019/05/24/yu/</id>
+    <published>2019-05-24T05:34:19.000Z</published>
+    <updated>2019-05-24T05:34:19.687Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>js:for ...of与 for... in</title>
