@@ -1778,7 +1778,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fbcc46;
+  background: #dd86b5;
 }
 .feed-link,
 .chat {
@@ -2991,6 +2991,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin-bottom: 100px;
 }
 #sidebar p,
 #sidebar span,
@@ -3018,4 +3019,17 @@ img.img-topic {
   padding: 0;
   float: right;
   clear: right;
+}
+.site-meta {
+  background: #408080;
+}
+.header-inner {
+  margin-top: 60px;
+  background: #408080;
+}
+.header-inner a {
+  color: #d6d0a9;
+}
+.header-inner a:hover {
+  color: #ff8040;
 }
