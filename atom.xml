@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>布吉的网络日志</title>
+  <title>布吉的博客</title>
   
   <subtitle>记录从这一刻开始</subtitle>
   <link href="/atom.xml" rel="self"/>
