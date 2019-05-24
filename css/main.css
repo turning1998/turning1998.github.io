@@ -1778,7 +1778,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #dd86b5;
+  background: #a3f53e;
 }
 .feed-link,
 .chat {
@@ -3032,4 +3032,7 @@ img.img-topic {
 }
 .header-inner a:hover {
   color: #ff8040;
+}
+#menu {
+  margin-bottom: 60px;
 }
