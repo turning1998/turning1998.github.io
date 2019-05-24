@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="http版本导图    2. HTTP版本之概念篇  HTTP（超文本传输协议),是互联网上应用最为广泛的一种网络协议，定义了浏览器怎样向服务器请求文档，以及服务器怎样把文档传送给浏览器。HTTP基于TCP/IP协议的应用层协议，它不涉及数据包传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。    HTTP/0.9版本篇要点   客户端向服务器请求网页，服务器只能回应HTML格式">
+<meta name="keywords" content="HTTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP的发展历史">
+<meta property="og:url" content="https://yulang.xyz/2019/05/17/HTTP的发展历史/index.html">
+<meta property="og:site_name" content="布吉的网络日志">
+<meta property="og:description" content="http版本导图    2. HTTP版本之概念篇  HTTP（超文本传输协议),是互联网上应用最为广泛的一种网络协议，定义了浏览器怎样向服务器请求文档，以及服务器怎样把文档传送给浏览器。HTTP基于TCP/IP协议的应用层协议，它不涉及数据包传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。    HTTP/0.9版本篇要点   客户端向服务器请求网页，服务器只能回应HTML格式">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://oscimg.oschina.net/oscnet/3a20ef14ab09472594f1889c44d50f06753.jpg">
+<meta property="og:image" content="https://oscimg.oschina.net/oscnet/9b1cb601fa1cc0a0f3fe19c0ed9534e1e1b.jpg">
+<meta property="og:image" content="https://oscimg.oschina.net/oscnet/26fa51a0f9914dc0b6c46cf9573fdba04eb.jpg">
+<meta property="og:updated_time" content="2019-05-24T12:29:24.432Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP的发展历史">
+<meta name="twitter:description" content="http版本导图    2. HTTP版本之概念篇  HTTP（超文本传输协议),是互联网上应用最为广泛的一种网络协议，定义了浏览器怎样向服务器请求文档，以及服务器怎样把文档传送给浏览器。HTTP基于TCP/IP协议的应用层协议，它不涉及数据包传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。    HTTP/0.9版本篇要点   客户端向服务器请求网页，服务器只能回应HTML格式">
+<meta name="twitter:image" content="https://oscimg.oschina.net/oscnet/3a20ef14ab09472594f1889c44d50f06753.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="布吉的网络日志" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://yulang.xyz/2019/05/17/HTTP的发展历史/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HTTP的发展历史 | 布吉的网络日志</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">布吉的网络日志</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">记录从这一刻开始</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/404/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>其他</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yulang.xyz/2019/05/17/HTTP的发展历史/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="布吉">
+      <meta itemprop="description" content="录从这一刻开始">
+      <meta itemprop="image" content="/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布吉的网络日志">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTTP的发展历史
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+         
+
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-17 20:27:58" itemprop="dateCreated datePublished" datetime="2019-05-17T20:27:58+08:00">2019-05-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-24 20:29:24" itemprop="dateModified" datetime="2019-05-24T20:29:24+08:00">2019-05-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习-计算机网络/" itemprop="url" rel="index"><span itemprop="name">学习 - 计算机网络</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li><strong>http版本导图</strong></li>
+</ol>
+<p><img src="https://oscimg.oschina.net/oscnet/3a20ef14ab09472594f1889c44d50f06753.jpg" alt></p>
+<hr>
+<h6 id="2-HTTP版本之概念篇"><a href="#2-HTTP版本之概念篇" class="headerlink" title="2. HTTP版本之概念篇"></a>2. <strong>HTTP版本之概念篇</strong></h6><p><img src="https://oscimg.oschina.net/oscnet/9b1cb601fa1cc0a0f3fe19c0ed9534e1e1b.jpg" alt></p>
+<ul>
+<li>HTTP（超文本传输协议),是互联网上应用最为广泛的一种网络协议，定义了浏览器怎样向服务器请求文档，以及服务器怎样把文档传送给浏览器。HTTP基于TCP/IP协议的应用层协议，它不涉及数据包传输，主要规定了客户端和服务器之间的通信格式，默认使用80端口。</li>
+</ul>
+<hr>
+<ol start="3">
+<li><strong>HTTP/0.9版本篇</strong><h6 id="要点"><a href="#要点" class="headerlink" title="要点"></a><strong>要点</strong></h6></li>
+</ol>
+<ul>
+<li>客户端向服务器请求网页，服务器只能回应HTML格式的字符串，不能回应别的格式。</li>
+<li>只有GET方式</li>
+<li>服务器发送完毕。就关闭TCP连接<h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a><strong>缺点</strong></h6></li>
+<li>每个TCP连接只能发送一个请求;发送数据完毕，连接就关闭，如果还要请求其他资源，就必须再新建一个连接</li>
+<li>TCP连接的新建成本很高，因为需要客户端和服务器三次握手，并且开始时发送速率较慢</li>
+<li>网页加载的外部资源越多，性能就越差</li>
+<li>只有一种请求方式</li>
+</ul>
+<hr>
+<ol start="4">
+<li><strong>HTTP/1.0版本篇</strong><h6 id="要点-1"><a href="#要点-1" class="headerlink" title="要点"></a><strong>要点</strong></h6></li>
+</ol>
+<ul>
+<li><p>任何格式的内容都可以发送。互联网不仅可以传输文字，还可以传输图像，视频，二进制文件。（由于发送的数据可以是任何格式，因此可以把数据压缩后再发送。CONTENT-ENCODING字段说明数据压缩的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">压缩的方式有（可以并列多个，用逗号隔开）：</span><br><span class="line">CONTENT-ENCODING:GZIP</span><br><span class="line">CONTENT-ENCODING:COMPRESS</span><br><span class="line">CONTENT-ENCODING:DEATE</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>除了GET命令，还引入POST命令和HEAD命令，丰富了浏览器与服务器的互动手段。</p>
+</li>
+<li>HTTP请求和回应格式发生改变，除了数据部分，每次通信都包括头部分，用来描述数据，</li>
+<li>新增的功能还包括：状态码(STATUS CODE)，多字符集支持，多部分发送(MULTI-PART TYPE)，权限(ANTHORIZATION)，缓存(CACHE)，内容编码(CONTENT ENCODING)等<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.0请求的例子：</span><br><span class="line"></span><br><span class="line">GET/HTTP/1.0 </span><br><span class="line">USER-AGENT:MOZILLA/5.0(MACINTOSH;INTEL MAC OS X 10_10_5 ) </span><br><span class="line">ACCEPT:*/*</span><br><span class="line">第一行为请求命令,必须在尾部添加协议版本(HTTP/1.0)</span><br><span class="line">后面为多行头信息，描述客户端情况</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.0回应的例子：</span><br><span class="line">HTTP/1.0 200 OK              /*协议版本+状态码+状态描述*/</span><br><span class="line">CONTENT-TYPE: TEXT/PLAIN   </span><br><span class="line">CONTENT-LENGTH: 137582</span><br><span class="line">EXPIRES: THU, 05 DEC 1997 16:00:00 GMT</span><br><span class="line">LAST-MODIFIED: WED, 5 AUGUST 1996 15:55:28 GMT</span><br><span class="line">SERVER: APACHE 0.84</span><br><span class="line"></span><br><span class="line">&lt;HTML&gt;</span><br><span class="line">  &lt;BODY&gt;HELLO WORLD&lt;/BODY&gt;</span><br><span class="line">&lt;/HTML&gt;</span><br><span class="line">CONTENT-TYPE:字符编码，HTTP 1.0规定 头部必须是ASCII码，后面可以是任何格式，</span><br><span class="line">因此，服务器回应时，CONTENT-TYPE的作用是：告诉客户端，数据是什么格式</span><br></pre></td></tr></table></figure>
+<h6 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a><strong>缺点</strong></h6><ul>
+<li><p><strong>非持续连接</strong>：每个TCP连接只能发送一个请求，每请求一个文档就需要两倍的RTT往返时间开销(一个RTT用于连接TCP连接，另一个用于请求和接收文档)。</p>
+<h6 id="如图所示：当HTTP协议首先要与服务器建立TCP连接，这就需要三次握手。当三次握手的前两部分完成后-即经过一个RTT时间后-，万维网客户就把HTTP请求报文作为第三次握手的第三个报文的数据发送给万维网服务器，服务器收到HTTP报文后，就把所请求的文档作为响应报文返回给客户。"><a href="#如图所示：当HTTP协议首先要与服务器建立TCP连接，这就需要三次握手。当三次握手的前两部分完成后-即经过一个RTT时间后-，万维网客户就把HTTP请求报文作为第三次握手的第三个报文的数据发送给万维网服务器，服务器收到HTTP报文后，就把所请求的文档作为响应报文返回给客户。" class="headerlink" title="如图所示：当HTTP协议首先要与服务器建立TCP连接，这就需要三次握手。当三次握手的前两部分完成后(即经过一个RTT时间后)，万维网客户就把HTTP请求报文作为第三次握手的第三个报文的数据发送给万维网服务器，服务器收到HTTP报文后，就把所请求的文档作为响应报文返回给客户。"></a>如图所示：当HTTP协议首先要与服务器建立TCP连接，这就需要三次握手。当三次握手的前两部分完成后(即经过一个RTT时间后)，万维网客户就把HTTP请求报文作为第三次握手的第三个报文的数据发送给万维网服务器，服务器收到HTTP报文后，就把所请求的文档作为响应报文返回给客户。</h6><p><img src="https://oscimg.oschina.net/oscnet/26fa51a0f9914dc0b6c46cf9573fdba04eb.jpg" alt="请求一个文档需要的时间" title="请求一个文档需要的时间"></p>
+</li>
+<li><p>发送数据完毕，连接就关闭，如果还要请求其他资源，就必须再新建一个连接。</p>
+</li>
+<li>TCP连接的新建成本很高，因为需要客户端和服务器三次握手，并且开始时发送速率较慢。（为了解决这个问题：有些浏览器在请求时，用了一个非标准的CONNECTION字段。即<code>CONNECTION:KEEP-ALIVE</code>请求服务器不要关闭TCP连接，以便其他请求复用，服务器同样回复这个字段；以实现TCP的复用，直到客户端或服务器主动关闭连接，但，这不是标准字段，不同实现的行为可能不一致，因此不是根本的解决办法。</li>
+<li>网页加载的外部资源越多，性能就越差。</li>
+</ul>
+<hr>
+<p><strong>5. HTTP/1.1版本篇</strong></p>
+<h6 id="要点-2"><a href="#要点-2" class="headerlink" title="要点"></a>要点</h6><ul>
+<li>引入了<strong>持久连接</strong>(PERSISITENT CONNECTION),即TCP连接默认不关闭，可以被多个请求复用，不用声明（简单的说：就是服务器在发送响应后仍热在一段时间内保持这条连接，使同一个用户（浏览器）和该服务器可以继续在这条连接上传送后续的HTTP请求报文和响应报文）。<code>CONNECTION:KEEP-ALIVE</code>客户端和服务器发现对方一段时间没有活动，就可以主动关闭连接。不过，规范的做法是，客户端在最后一个请求时明确要求服务器关闭TCP连接。<code>CONNECTION:CLOSE</code></li>
+<li><p>目前，对于同一个域名，大多数浏览器允许同时建立<strong>6个</strong>持久连接。</p>
+</li>
+<li><p>引入了<strong>管道机制</strong>，即在同一个TCP连接里面，客户端可以同时发送多个请求。（提高HTTP协议的效率）；举例说明：客户端需要请求两个资源，HTTP1.0是在同一个TCP连接里面，先发送A请求，然后等待服务器做出回应，收到后再发送B请求；管道机制是允许浏览器同时发生A请求和B请求，但是服务器还是按照顺序，先回应A请求，完成后再回应B请求</p>
+</li>
+<li><p>一个TCP连接可以传送多个回应，势必要有机制，区分数据包是属于哪一个回应的。这就是CONTENT-LENGTH字段的作用，声明本次回应的数据长度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CONTENT-LENGTH:3495</span><br><span class="line">告诉浏览器本次回应的长度是3495个字节，后面的字节就属于下一个回应</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>分块传输编码</strong>；HTTP1.1采用分块传输编码；使用CONTENT-LENGTH字段的前提是服务器发送回应之前，必须知道回应数据的长度。但对于一些耗时的动态操作来说，这意味着，服务器要等所有操作完成，才能发送数据，显然效率不高，更好的处理方式是：服务器每产生一块数据，就发送一块，采用“流模式（STREAM）”取代“缓存模式(BUFFER)”.因此1.1版规定可以不使用<code>CONTENT-LENGTH</code>字段，而使用“分块传输编码”，只要请求或回应的头信息有<code>TRANSFER-ENCODING</code>字段，就表明回应的数据将由数量未定的数据块组成。<code>TRANSFER-ENCODING:CHUNKED</code><br>每个非空的数据块之前，会有16进制的数值，表示这个块的长度，最后是一个大小为0的块，就表示本次回应的数据发送完。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Eg:</span><br><span class="line">HTTP/1.1 200 OKCONTENT-TYPE: TEXT/PLAINTRANSFER-ENCODING: CHUNKED</span><br><span class="line"></span><br><span class="line">25</span><br><span class="line">THIS IS THE DATA IN THE FIRST CHUNK</span><br><span class="line"></span><br><span class="line">1C</span><br><span class="line">AND THIS IS THE SECOND ONE</span><br><span class="line"></span><br><span class="line">3</span><br><span class="line">CON</span><br><span class="line"></span><br><span class="line">8</span><br><span class="line">SEQUENCE</span><br><span class="line"></span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong> 新增功能</strong>：PUT,PATCH,HEAD,OPTIONS,DELECT.<br>客户端的头信息增加HOST字段，用来指定服务器的域名。<br><code>HOST:WWW.EXAMPLE.COM</code><br>有了HOST字段，就可以将请求发往同一台服务器的不同的网站，为虚拟主机的新起打下了基础。</p>
+<h6 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a><strong>缺点</strong></h6></li>
+<li>虽然复用TCP连接，但是在同一个TCP连接里面，所有的数据通信都是按照次序进行的。服务器只有处理完一个回应，才能进行下一个回应。(解决办法：A. 减少HTTP请求数;B:同时多开持久连接)</li>
+</ul>
+<hr>
+<p><strong>6. HTTP/2版本篇</strong></p>
+<h6 id="要点-3"><a href="#要点-3" class="headerlink" title="要点"></a>要点</h6><ul>
+<li><strong>采用二进制协议</strong>：HTTP/1.1的头信息是文本（ASCII编码），数据体可以是文本（解析非常麻烦），也可以是二进制。而HTTP/2则是一个彻底的二进制协议，头信息和数据体都是二进制，通称为“帧”（FRAME）:头信息帧和数据帧。二进制协议的一个好处是：可以定义额外的帧，解析方便。</li>
+<li><strong>多路复用(双向，实时的通信)</strong>：HTTP/2复用TCP连接，在一个连接里，客户端和服务端都可以同时发送多个请求或回应，而不用按照顺序一一对应，这样就避免“队头阻塞”。举例来说：在一个TCP连接里面，服务器同时收到A请求和B请求，先回应A请求，结果发现处理过程非常耗时，于是就发送A请求已经处理好的部分，接着回应B请求，完成后，才发送B请求剩下的部分。</li>
+<li><strong>数据流</strong>：HTTP/2的数据流是不按顺序发送的，同一个连接里面连续的数据包，可能属于不同的回应。因此必须要对数据包标记，指出它属于哪个回应。HTTP/2将每一个请求或回应的所有数据包，称为一个数据流。每个数据流都有一个独一无二的编号。数据包发送时，都必须标记数据流ID，用于区分它属于哪一个数据流，另外规定：客户端发出的数据流，ID一律为奇数，服务器发出的，ID为偶数。数据流发送一半时，客户端和服务器都可以发送信号，取消这个数据流。即HTTP/2可以取消某一个请求，同时保证TCP连接还开着，可以被其他请求使用。客户端还可以指定数据流的优先级，优先级越高，服务器就越早回应。</li>
+<li><strong>头信息压缩</strong>：HTTP2以前的版本协议不带有状态，每次请求都必须附上所有的信息。所以，请求的很多字段都是重复的，比如COOKIE和USER AGENT,一模一样的内容，每次请求都必须附带，这很浪费很多宽带，也影响速度。HTTP/2优化了这一点。引入了头信息压缩机制。一方面：头信息使用GZIP或COMPRESS压缩后再发送，另一方面，客户端和服务端同时维护一张头信息表，所有字段都会存入这个表，生成一个索引号，以后就不发送同样字段，只发送索引号，提高速度。</li>
+<li><strong>服务器推送</strong>：HTTP/2允许服务器未经请求，主动向客户端发送资源–&gt;服务器推送。eg:客户端请求一个网页，这个网页里面包含静态资源。正常情况下，客户端必须收到网页后，解析HTML源码，发现有静态资源，再发送静态资源请求；其实，服务器可以预期到客户端请求网页后，很可能再请求静态资源，所以主动把这些静态资源随网页一起发给客户端。</li>
+</ul>
+<h6 id="缺点-3"><a href="#缺点-3" class="headerlink" title="缺点"></a><strong>缺点</strong></h6><ul>
+<li>请求太多时也需要排队</li>
+</ul>
+<hr>
+<p><strong>7. HTTPS版本篇</strong></p>
+<h6 id="要点-4"><a href="#要点-4" class="headerlink" title="要点"></a><strong>要点</strong></h6><ul>
+<li>HTTPS 是以安全为目标的HTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL</li>
+<li>HTTPS协议的主要作用是：建立一个信息安全通道，来确保数组的传输，确保网站的真实性</li>
+<li>HTTPS的SSL加密是在传输层实现的 <h6 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a><strong>工作原理</strong></h6></li>
+<li>客户使用HTTPS URL访问服务器，则要求WEB 服务器建立SSL链接。</li>
+<li>WEB服务器接收到客户端的请求之后，会将网站的证书（证书中包含了公钥），返回或者说传输给客户端。</li>
+<li>客户端和WEB服务器端开始协商SSL链接的安全等级，也就是加密等级。</li>
+<li>客户端浏览器通过双方协商一致的安全等级，建立会话密钥，然后通过网站的公钥来加密会话密钥，并传送给网站。</li>
+<li>WEB服务器通过自己的私钥解密出会话密钥。</li>
+<li>WEB服务器通过会话密钥加密与客户端之间的通信。<h6 id="优点"><a href="#优点" class="headerlink" title="优点"></a><strong>优点</strong></h6></li>
+<li>使用HTTPS协议可认证用户和服务器，确保数据发送到正确的客户机和服务器</li>
+<li>HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比HTTP协议安全，可防止数据在传输过程中不被窃取、改变，确保数据的完整性。</li>
+<li>HTTPS是现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了中间人攻击的成本。<h6 id="缺点-4"><a href="#缺点-4" class="headerlink" title="缺点"></a><strong>缺点</strong></h6></li>
+<li>HTTPS握手阶段比较费时，会使页面加载时间延长50%，增加10%~20%的耗电。</li>
+<li>HTTPS缓存不如HTTP高效，会增加数据开销。</li>
+<li>SSL证书也需要钱，功能越强大的证书费用越高。</li>
+<li>SSL证书需要绑定IP，不能再同一个IP上绑定多个域名，IPV4资源支持不了这种消耗。<h6 id="HTTP和HTTPS的区别"><a href="#HTTP和HTTPS的区别" class="headerlink" title="HTTP和HTTPS的区别"></a><strong>HTTP和HTTPS的区别</strong></h6></li>
+<li>HTTPS协议需要证书，费用较高。</li>
+<li>HTTP是超文本传输协议，传输的数据都是未加密的即明文传输，HTTPS则是具有安全性的SSL加密传输协议。</li>
+<li>使用不同的链接方式，端口也不同，一般而言，HTTP协议的端口为80，HTTPS的端口为443</li>
+<li>HTTP协议是无连接，无状态的；(无连接：虽然HTTP使用了TCP连接，但通信的双方在交换HTTP报文之前不需要建立HTTP连接;无状态：是指服务端对于客户端每次发送的请求都认为它是一个新的请求，上一次会话和下一次会话没有联系);HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比HTTP协议安全。</li>
+<li>HTTPS提升访问速度（可以对于，请求资源所需时间更少，访问速度更快，相比HTTP1.0）</li>
+<li>HTTPS允许多路复用：多路复用允许同时通过单一的HTTP/2连接发送多重请求-响应信息。改善了：在HTTP1.1中，浏览器客户端在同一时间，针对同一域名下的请求有一定数量限制（连接数量），超过限制会被阻塞。</li>
+<li>二进制分帧：HTTP2.0会将所有的传输信息分割为更小的信息或者帧，并对他们进行二进制编码</li>
+<li>HTTP2首部压缩;服务器端推送(相对于HTTP1.0)</li>
+</ul>
+<hr>
+<h6 id="7-SSL-TLS协议介绍"><a href="#7-SSL-TLS协议介绍" class="headerlink" title="7. SSL/TLS协议介绍"></a><strong>7. SSL/TLS协议介绍</strong></h6><p>互联网的通信安全是建立在SSL/TLS协议之上。不使用SSL/TLS的HTTP协议，就是不加密的通信；会带来三大风险：</p>
+<ul>
+<li>（1）<strong>窃听风险</strong>：第三方可以获取通信内容；</li>
+<li>（2）<strong>篡改风险</strong>：第三方可以修改通信内容。</li>
+<li>（3）<strong>冒失风险</strong>：第三方可以冒充他人身份参与通信。<h6 id="SSL-TLS就是为了解决这三大风险而设计的，希望达到："><a href="#SSL-TLS就是为了解决这三大风险而设计的，希望达到：" class="headerlink" title="SSL/TLS就是为了解决这三大风险而设计的，希望达到："></a>SSL/TLS就是为了解决这三大风险而设计的，希望达到：</h6></li>
+<li>（1）所有信息都是加密传播，第三方无法窃听</li>
+<li>（2）具有校验机制，一旦被篡改，通信双方立即发现。</li>
+<li>（3）配备身份证书，防止身份被冒充。<h6 id="SSL-TLS协议的基本思路"><a href="#SSL-TLS协议的基本思路" class="headerlink" title="SSL/TLS协议的基本思路"></a><strong>SSL/TLS协议的基本思路</strong></h6>采用公钥加密法，即客户端先向服务端索要公钥，然后用公钥加密信息，客户端收到密文后，用自己的私钥解密。</li>
+</ul>
+<h6 id="如何保证公钥不被篡改？"><a href="#如何保证公钥不被篡改？" class="headerlink" title="如何保证公钥不被篡改？"></a>如何保证公钥不被篡改？</h6><p>解决方法：将公钥放在数字证书中。只要证书是可信的，公钥就是可信的。</p>
+<h6 id="公钥加密计算量太大，如何减少耗用的时间？"><a href="#公钥加密计算量太大，如何减少耗用的时间？" class="headerlink" title="公钥加密计算量太大，如何减少耗用的时间？"></a>公钥加密计算量太大，如何减少耗用的时间？</h6><p>解决方法：每一次对话（SESSION），客户端和服务器端都生成一个”对话密钥”（SESSION KEY），用它来加密信息。由于”对话密钥”是对称加密，所以运算速度非常快，而服务器公钥只用于加密”对话密钥”本身，这样就减少了加密运算的消耗时间。</p>
+<h6 id="SSL-TLS协议的基本过程："><a href="#SSL-TLS协议的基本过程：" class="headerlink" title="SSL/TLS协议的基本过程："></a><strong>SSL/TLS协议的基本过程</strong>：</h6><ul>
+<li>（1） 客户端向服务器端索要并验证公钥。</li>
+<li>（2） 双方协商生成”对话密钥”。</li>
+<li>（3） 双方采用”对话密钥”进行加密通信。<br>上面过程的前两步，又称为”握手阶段”（HANDSHAKE）。<br>开始加密通信之前，客户端和服务器首先必须建立连接和交换参数，这个过程叫做握手；HTTP耗时 = TCP握手；HTTPS耗时 = TCP握手 + SSL握手<br>所以，HTTPS肯定比HTTP耗时，这就叫SSL延迟<h6 id="8-参考文章"><a href="#8-参考文章" class="headerlink" title="8. 参考文章"></a>8.<strong> 参考文章</strong></h6></li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2016/08/http.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/08/http.html</a></li>
+<li><a href="https://github.com/forthealllight/blog/issues/19" target="_blank" rel="noopener">https://github.com/forthealllight/blog/issues/19</a></li>
+<li><a href="https://github.com/YanceyOfficial/interview/blob/master/HTTP/%5BHTTP%20%E7%B3%BB%E5%88%97%5D%20%E7%AC%AC%202%20%E7%AF%87%20%E2%80%94%E2%80%94%20HTTP%20%E5%8D%8F%E8%AE%AE%E9%82%A3%E4%BA%9B%E4%BA%8B.md" target="_blank" rel="noopener">https://github.com/YanceyOfficial/interview/blob/master/HTTP/%5BHTTP%20%E7%B3%BB%E5%88%97%5D%20%E7%AC%AC%202%20%E7%AF%87%20%E2%80%94%E2%80%94%20HTTP%20%E5%8D%8F%E8%AE%AE%E9%82%A3%E4%BA%9B%E4%BA%8B.md</a></li>
+</ul>
+<p>2019-05-12 21:16:45 星期日</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>布吉</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://yulang.xyz/2019/05/17/HTTP的发展历史/" title="HTTP的发展历史">https://yulang.xyz/2019/05/17/HTTP的发展历史/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+    <div>
+      
+         <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+      </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTTP/" rel="tag"><i class="fa fa-tag"></i> HTTP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/15/for ...of与 for... in/" rel="next" title="js:for ...of与 for... in">
+                <i class="fa fa-chevron-left"></i> js:for ...of与 for... in
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/19/HTTP的结构/" rel="prev" title="HTTP的结构">
+                HTTP的结构 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/logo.jpg" alt="布吉">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">布吉</p>
+              <div class="site-description motion-element" itemprop="description">录从这一刻开始</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:1768788178@qq.com" title="E-Mail &rarr; mailto:1768788178@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#2-HTTP版本之概念篇"><span class="nav-number">1.</span> <span class="nav-text">2. HTTP版本之概念篇</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#要点"><span class="nav-number">2.</span> <span class="nav-text">要点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#缺点"><span class="nav-number">3.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#要点-1"><span class="nav-number">4.</span> <span class="nav-text">要点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#缺点-1"><span class="nav-number">5.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如图所示：当HTTP协议首先要与服务器建立TCP连接，这就需要三次握手。当三次握手的前两部分完成后-即经过一个RTT时间后-，万维网客户就把HTTP请求报文作为第三次握手的第三个报文的数据发送给万维网服务器，服务器收到HTTP报文后，就把所请求的文档作为响应报文返回给客户。"><span class="nav-number">6.</span> <span class="nav-text">如图所示：当HTTP协议首先要与服务器建立TCP连接，这就需要三次握手。当三次握手的前两部分完成后(即经过一个RTT时间后)，万维网客户就把HTTP请求报文作为第三次握手的第三个报文的数据发送给万维网服务器，服务器收到HTTP报文后，就把所请求的文档作为响应报文返回给客户。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#要点-2"><span class="nav-number">7.</span> <span class="nav-text">要点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#缺点-2"><span class="nav-number">8.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#要点-3"><span class="nav-number">9.</span> <span class="nav-text">要点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#缺点-3"><span class="nav-number">10.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#要点-4"><span class="nav-number">11.</span> <span class="nav-text">要点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#工作原理"><span class="nav-number">12.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#优点"><span class="nav-number">13.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#缺点-4"><span class="nav-number">14.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#HTTP和HTTPS的区别"><span class="nav-number">15.</span> <span class="nav-text">HTTP和HTTPS的区别</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-SSL-TLS协议介绍"><span class="nav-number">16.</span> <span class="nav-text">7. SSL/TLS协议介绍</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#SSL-TLS就是为了解决这三大风险而设计的，希望达到："><span class="nav-number">17.</span> <span class="nav-text">SSL/TLS就是为了解决这三大风险而设计的，希望达到：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#SSL-TLS协议的基本思路"><span class="nav-number">18.</span> <span class="nav-text">SSL/TLS协议的基本思路</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何保证公钥不被篡改？"><span class="nav-number">19.</span> <span class="nav-text">如何保证公钥不被篡改？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#公钥加密计算量太大，如何减少耗用的时间？"><span class="nav-number">20.</span> <span class="nav-text">公钥加密计算量太大，如何减少耗用的时间？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#SSL-TLS协议的基本过程："><span class="nav-number">21.</span> <span class="nav-text">SSL/TLS协议的基本过程：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#8-参考文章"><span class="nav-number">22.</span> <span class="nav-text">8. 参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">布吉</span>
+
+  
+    <div class="theme-info">
+      <div class="powered-by"></div>
+     <span class="post-count">博客全站共13.3k字</span>
+    </div>
+    <span title="站点总字数"></span>
+  
+
+  
+</div>
+
+
+   <div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  <span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="150" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
