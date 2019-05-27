@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yulang.xyz/"/>
-  <updated>2019-05-27T11:21:58.448Z</updated>
+  <updated>2019-05-27T11:54:25.481Z</updated>
   <id>https://yulang.xyz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python和python可化工具PyCharm 的安装</title>
+    <link href="https://yulang.xyz/2019/05/27/Python%E5%92%8Cpython%E5%8F%AF%E5%8C%96%E5%B7%A5%E5%85%B7PyCharm-%E7%9A%84%E5%AE%89%E8%A3%85/"/>
+    <id>https://yulang.xyz/2019/05/27/Python和python可化工具PyCharm-的安装/</id>
+    <published>2019-05-27T11:26:28.000Z</published>
+    <updated>2019-05-27T11:54:25.481Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="Python的介绍"><a href="#Python的介绍" class="headerlink" title="Python的介绍"></a>Python的介绍</h5><p>是一种计算机程序设计语言。是一种面向对象的动态类型语言 。<br>可以应用于以下领域:<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Web 和 Internet开发</span><br><span class="line">科学计算和统计</span><br><span class="line">教育</span><br><span class="line">桌面界面开发</span><br><span class="line">软件开发</span><br><span class="line">后端开发</span><br></pre></td></tr></table></figure></p><h5 id="PyCharm介绍"><a href="#PyCharm介绍" class="headerlink" title="PyCharm介绍"></a>PyCharm介绍</h5><p>是一种Python IDE，带有一整套可以帮助用户在使用Python语言开发时提高其效率的工具，比如调试、语法高亮、Project管理、代码跳转、智能提示、自动完成、单元测试、版本控制。此外，该IDE提供了一些高级功能，以用于支持Django框架下的专业Web开发。</p><h5 id="PyCharm的安装包"><a href="#PyCharm的安装包" class="headerlink" title="PyCharm的安装包"></a>PyCharm的安装包</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/18XiLZ-Zx_XsuHAS4wwQ0Nw </span><br><span class="line">提取码：t9u2</span><br></pre></td></tr></table></figure><h5 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h5><p><a href="https://blog.csdn.net/ling_mochen/article/details/79314118" target="_blank" rel="noopener">https://blog.csdn.net/ling_mochen/article/details/79314118</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;Python的介绍&quot;&gt;&lt;a href=&quot;#Python的介绍&quot; class=&quot;headerlink&quot; title=&quot;Python的介绍&quot;&gt;&lt;/a&gt;Python的介绍&lt;/h5&gt;&lt;p&gt;是一种计算机程序设计语言。是一种面向对象的动态类型语言 。&lt;br&gt;可以应用于以下领域
+      
+    
+    </summary>
+    
+      <category term="工具 - Python" scheme="https://yulang.xyz/categories/%E5%B7%A5%E5%85%B7-Python/"/>
+    
+    
+      <category term="Python" scheme="https://yulang.xyz/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Rose的安装</title>
