@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Rose的安装]]></title>
+    <url>%2F2019%2F05%2F27%2FRose%E7%9A%84%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[Rose工具的安装Rose 2007是一款专业的可视化建模工具，用于可视化建模和公司级水平软件应用的组件构造。Rational Rose包括了统一建模语言（UML），OOSE，以及OMT。Rational Rose 2007有两个受欢迎的特征就是它的提供反复式发展和来回旅程工程的能力。 安装包及安装过程https://blog.csdn.net/xfz0330/article/details/39890867 安装包链接：https://pan.baidu.com/s/1DQtwbmoz1txt8w4RrKANVQ 提取码：h7fr]]></content>
+      <categories>
+        <category>工具 - Rose</category>
+      </categories>
+      <tags>
+        <tag>Rose</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo的安装]]></title>
     <url>%2F2019%2F05%2F27%2Fhexo%E7%9A%84%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[hexo安装及配置[Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。]https://www.cnblogs.com/visugar/p/6821777.html https://blog.csdn.net/sinat_37781304/article/details/82729029 https://blog.csdn.net/weixin_39345384/article/details/80785373 hexo主题(next)https://theme-next.iissnan.com/getting-started.html 常用指令：1234hexo new &quot;文章标题&quot; //新建文章hexo clean &amp;&amp; hexo g //清空缓存并生成静态文件hexo s -p 4000 或者 hexo s //启动本地服务默认hexo d 或者 gulp deploy //部署发布 我的博客地址https://yulang.xyz/]]></content>

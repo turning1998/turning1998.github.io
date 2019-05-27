@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yulang.xyz/"/>
-  <updated>2019-05-27T11:04:31.419Z</updated>
+  <updated>2019-05-27T11:21:58.448Z</updated>
   <id>https://yulang.xyz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Rose的安装</title>
+    <link href="https://yulang.xyz/2019/05/27/Rose%E7%9A%84%E5%AE%89%E8%A3%85/"/>
+    <id>https://yulang.xyz/2019/05/27/Rose的安装/</id>
+    <published>2019-05-27T11:09:10.000Z</published>
+    <updated>2019-05-27T11:21:58.448Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="Rose工具的安装"><a href="#Rose工具的安装" class="headerlink" title="Rose工具的安装"></a>Rose工具的安装</h5><p>Rose 2007是一款专业的可视化建模工具，用于可视化建模和公司级水平软件应用的组件构造。Rational Rose包括了统一建模语言（UML），OOSE，以及OMT。Rational Rose 2007有两个受欢迎的特征就是它的提供反复式发展和来回旅程工程的能力。</p><h5 id="安装包及安装过程"><a href="#安装包及安装过程" class="headerlink" title="安装包及安装过程"></a>安装包及安装过程</h5><p><a href="https://blog.csdn.net/xfz0330/article/details/39890867" target="_blank" rel="noopener">https://blog.csdn.net/xfz0330/article/details/39890867</a></p><h5 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h5><p>链接：<a href="https://pan.baidu.com/s/1DQtwbmoz1txt8w4RrKANVQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1DQtwbmoz1txt8w4RrKANVQ</a> </p><h5 id="提取码：h7fr"><a href="#提取码：h7fr" class="headerlink" title="提取码：h7fr"></a>提取码：h7fr</h5>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;Rose工具的安装&quot;&gt;&lt;a href=&quot;#Rose工具的安装&quot; class=&quot;headerlink&quot; title=&quot;Rose工具的安装&quot;&gt;&lt;/a&gt;Rose工具的安装&lt;/h5&gt;&lt;p&gt;Rose 2007是一款专业的可视化建模工具，用于可视化建模和公司级水平软件应用的组
+      
+    
+    </summary>
+    
+      <category term="工具 - Rose" scheme="https://yulang.xyz/categories/%E5%B7%A5%E5%85%B7-Rose/"/>
+    
+    
+      <category term="Rose" scheme="https://yulang.xyz/tags/Rose/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo的安装</title>
