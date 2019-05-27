@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yulang.xyz/"/>
-  <updated>2019-05-24T12:39:11.789Z</updated>
+  <updated>2019-05-27T11:04:31.419Z</updated>
   <id>https://yulang.xyz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo的安装</title>
+    <link href="https://yulang.xyz/2019/05/27/hexo%E7%9A%84%E5%AE%89%E8%A3%85/"/>
+    <id>https://yulang.xyz/2019/05/27/hexo的安装/</id>
+    <published>2019-05-27T10:48:53.000Z</published>
+    <updated>2019-05-27T11:04:31.419Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="hexo安装及配置"><a href="#hexo安装及配置" class="headerlink" title="hexo安装及配置"></a>hexo安装及配置</h5><p>[Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。]<br><a href="https://www.cnblogs.com/visugar/p/6821777.html" target="_blank" rel="noopener">https://www.cnblogs.com/visugar/p/6821777.html</a></p><p><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">https://blog.csdn.net/sinat_37781304/article/details/82729029</a></p><p><a href="https://blog.csdn.net/weixin_39345384/article/details/80785373" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39345384/article/details/80785373</a></p><h6 id="hexo主题-next"><a href="#hexo主题-next" class="headerlink" title="hexo主题(next)"></a>hexo主题(next)</h6><p><a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">https://theme-next.iissnan.com/getting-started.html</a> </p><h4 id="常用指令："><a href="#常用指令：" class="headerlink" title="常用指令："></a>常用指令：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;文章标题&quot;       //新建文章</span><br><span class="line">hexo clean &amp;&amp; hexo g  //清空缓存并生成静态文件</span><br><span class="line">hexo s -p 4000 或者 hexo s  //启动本地服务默认</span><br><span class="line">hexo d 或者 gulp deploy  //部署发布</span><br></pre></td></tr></table></figure><h5 id="我的博客地址"><a href="#我的博客地址" class="headerlink" title="我的博客地址"></a>我的博客地址</h5><p><a href="https://yulang.xyz/">https://yulang.xyz/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;hexo安装及配置&quot;&gt;&lt;a href=&quot;#hexo安装及配置&quot; class=&quot;headerlink&quot; title=&quot;hexo安装及配置&quot;&gt;&lt;/a&gt;hexo安装及配置&lt;/h5&gt;&lt;p&gt;[Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成
+      
+    
+    </summary>
+    
+      <category term="工具 - hexo" scheme="https://yulang.xyz/categories/%E5%B7%A5%E5%85%B7-hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://yulang.xyz/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>浏览器是如何渲染网页的</title>
