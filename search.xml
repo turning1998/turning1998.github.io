@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[股票交易系统总结]]></title>
+    <url>%2F2019%2F07%2F02%2F%E8%82%A1%E7%A5%A8%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[1. 系统名称证券交易系统 2. 系统开发目的对于非高频使用的用户，不想让移动 app 躺在自己的移动设备，当之首选。只需要进入网站即可。同时对于想要了解证劵交易的新手，最开始可以从该系统入手，不需要安装和卸载软件。拉拢潜在的客户。便捷性：对于非高频使用的用户，不想让移动 app 躺在自己的移动设备，当之首选。只需要进入网站即可。同时对于想要了解证劵交易的新手，最开始可以从该系统入手，不需要安装和卸载软件。拉拢潜在的客户,并且提供详细的日 K 图，和实时更新的分时图。3. 系统功能（也可查看接口文件了解） http://www.xml626.cn:8081/swagger-ui.html#/forum-topic-back-controller 4. 系统使用技术前端：html+scss+js+es6+vue+element+vuex+mock.js 后端：java+Springboot+mybatis+多数据源+redis数据库+连接池+yml配置方式+swagger 数据库：mysql 数据来源：东方财富网 爬取数据技术：python+scapy 框架 5.接口文件可直接访问下面地址 http://www.xml626.cn:8081/swagger-ui.html#/forum-topic-back-controller 6.系统总结及系统中遇到到问题及需要注意的点及感受记录在我的博客中啦，地址：https://yulang.xyz/archives/ 7. 系统源码https://github.com/turning1998/Securities_Systems 8. 系统界面（1）登录界面 （2）注册页面 （3）开户界面 （4）个人信息采集界面 （5）个人信息完善 （6）首页 （7）股票详情页面 （8）帖子页面 （9）发帖页面 （10）帖子详情页面 （11）发表评论页面 （12）买入或卖出股票页面 （13）交易历史纪录（包括挂单，持仓信息，当日委托，当日成交）]]></content>
+      <categories>
+        <category>项目 - 股票交易系统</category>
+      </categories>
+      <tags>
+        <tag>项目</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python和python可化工具PyCharm 的安装]]></title>
     <url>%2F2019%2F05%2F27%2FPython%E5%92%8Cpython%E5%8F%AF%E5%8C%96%E5%B7%A5%E5%85%B7PyCharm-%E7%9A%84%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[Python的介绍是一种计算机程序设计语言。是一种面向对象的动态类型语言 。可以应用于以下领域: 123456Web 和 Internet开发科学计算和统计教育桌面界面开发软件开发后端开发 PyCharm介绍是一种Python IDE，带有一整套可以帮助用户在使用Python语言开发时提高其效率的工具，比如调试、语法高亮、Project管理、代码跳转、智能提示、自动完成、单元测试、版本控制。此外，该IDE提供了一些高级功能，以用于支持Django框架下的专业Web开发。 PyCharm的安装包12链接：https://pan.baidu.com/s/18XiLZ-Zx_XsuHAS4wwQ0Nw 提取码：t9u2 安装过程https://blog.csdn.net/ling_mochen/article/details/79314118]]></content>
