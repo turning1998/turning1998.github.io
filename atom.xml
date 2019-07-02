@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yulang.xyz/"/>
-  <updated>2019-07-02T05:35:37.198Z</updated>
+  <updated>2019-07-02T05:44:05.103Z</updated>
   <id>https://yulang.xyz/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>打包vue项目,并利用webpack运行在本地</title>
+    <link href="https://yulang.xyz/2019/07/02/%E6%89%93%E5%8C%85vue%E9%A1%B9%E7%9B%AE-%E5%B9%B6%E5%88%A9%E7%94%A8webpack%E8%BF%90%E8%A1%8C%E5%9C%A8%E6%9C%AC%E5%9C%B0/"/>
+    <id>https://yulang.xyz/2019/07/02/打包vue项目-并利用webpack运行在本地/</id>
+    <published>2019-07-02T05:40:28.000Z</published>
+    <updated>2019-07-02T05:44:05.103Z</updated>
+    
+    <content type="html"><![CDATA[<p>打包后的项目生成的dist文件可以部署到 express 服务器上运行</p><h2 id="1-打包vue项目"><a href="#1-打包vue项目" class="headerlink" title="1.  打包vue项目"></a>1.  打包vue项目</h2><p>（1）cd vue项目</p><p>（2）npm run bulid</p><p><img src="https://oscimg.oschina.net/oscnet/ccb20e735f825c355dfa9fea89f82555a44.jpg" alt></p><p><img src="https://oscimg.oschina.net/oscnet/5679fd69f10ec3921f7c3d86d6a9091ddca.jpg" alt></p><p>（3）打包完会生成dist文件夹。如图：</p><p><img src="https://oscimg.oschina.net/oscnet/5896e76db70603b4ed808b2fdd5d83869e0.jpg" alt></p><p>（4）注意：如果此时打开dist下的index.html</p><p>页面将一片空白，并且报错</p><p><img src="https://oscimg.oschina.net/oscnet/986b95465c795cc8309bfbea80c4bdd0a7c.jpg" alt><br>vue打包的项目不能直接打开，因为直接打开的的协议是file，vue项目必须放在服务器上才能打开</p><h2 id="2-利用webpack运行vue项目"><a href="#2-利用webpack运行vue项目" class="headerlink" title="2.  利用webpack运行vue项目"></a>2.  利用webpack运行vue项目</h2><p>(1) cd 到新目录</p><p>（2）安装express-generator生成器</p><p>npm install express-generator -g</p><p>（3） 创建一个express项目</p><p>express test （test是项目名）</p><p>（4）cd test</p><p> (5) npm install</p><p><img src="https://oscimg.oschina.net/oscnet/149262f56fc99b97ff8ae130fcbdba68f0c.jpg" alt></p><p>(6)把vue项目dist下的所有文件拷贝到webpack项目（test）的public目录下</p><p><img src="https://oscimg.oschina.net/oscnet/789588e1982bfefb430d2d16a729fec2ea4.jpg" alt></p><p>（5）npm start</p><p>启动express项目</p><p><img src="https://oscimg.oschina.net/oscnet/9bd16906b50e4348e9522363e625d35fc71.jpg" alt></p><p>打开浏览器，输入 <a href="http://localhost:3000" target="_blank" rel="noopener">http://localhost:3000</a> 即可</p><p><img src="https://oscimg.oschina.net/oscnet/0208f207afdcb67c822c297282d6d7da0a9.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;打包后的项目生成的dist文件可以部署到 express 服务器上运行&lt;/p&gt;
+&lt;h2 id=&quot;1-打包vue项目&quot;&gt;&lt;a href=&quot;#1-打包vue项目&quot; class=&quot;headerlink&quot; title=&quot;1.  打包vue项目&quot;&gt;&lt;/a&gt;1.  打包vue项目&lt;/h
+      
+    
+    </summary>
+    
+      <category term="学习 - vue" scheme="https://yulang.xyz/categories/%E5%AD%A6%E4%B9%A0-vue/"/>
+    
+    
+      <category term="vue" scheme="https://yulang.xyz/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>股票交易系统总结</title>
