@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="cookie： n. 饼干；小甜点 为什么会引入Cookie（在客户端保持http状态）因为http协议是一种无状态协议，web服务器本身不能识别出哪些请求是同一个服务器发送的，浏览器的每一次请求都是独立的。因此引入cookie来唯一标识一个用户，同时记录该用户的状态。Cookie介绍Cookie是浏览器在访问WEB服务器的某个资源时，由WEB服务器在HTTP响应头附带传送给浏览器的一个小文本文件">
+<meta name="keywords" content="本地化存储">
+<meta property="og:type" content="article">
+<meta property="og:title" content="本地化存储:cookie">
+<meta property="og:url" content="https://yulang.xyz/2019/09/22/本地化存储-cookie/index.html">
+<meta property="og:site_name" content="布吉的博客">
+<meta property="og:description" content="cookie： n. 饼干；小甜点 为什么会引入Cookie（在客户端保持http状态）因为http协议是一种无状态协议，web服务器本身不能识别出哪些请求是同一个服务器发送的，浏览器的每一次请求都是独立的。因此引入cookie来唯一标识一个用户，同时记录该用户的状态。Cookie介绍Cookie是浏览器在访问WEB服务器的某个资源时，由WEB服务器在HTTP响应头附带传送给浏览器的一个小文本文件">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://oscimg.oschina.net/oscnet/e83a49572444fa49eeaf384afbf3f49e518.jpg">
+<meta property="og:image" content="https://oscimg.oschina.net/oscnet/bd4473268ed5f797401cfe38b1082e565b6.jpg">
+<meta property="og:image" content="https://oscimg.oschina.net/oscnet/4be04cf4d54b978385d8d5ce40b9cf4487c.jpg">
+<meta property="og:image" content="https://oscimg.oschina.net/oscnet/e1ccfab0a921d83495fed1e5f9008578faf.jpg">
+<meta property="og:image" content="https://oscimg.oschina.net/oscnet/85595dc2a53f01d73fad2b7c9fc8ec8418d.jpg">
+<meta property="og:image" content="https://oscimg.oschina.net/oscnet/d1fcbe326d02945e599e774120850874ad1.jpg">
+<meta property="og:image" content="https://oscimg.oschina.net/oscnet/32eb02927b58e745f29567b1e4a7bd857fb.jpg">
+<meta property="og:updated_time" content="2019-09-22T02:23:13.883Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="本地化存储:cookie">
+<meta name="twitter:description" content="cookie： n. 饼干；小甜点 为什么会引入Cookie（在客户端保持http状态）因为http协议是一种无状态协议，web服务器本身不能识别出哪些请求是同一个服务器发送的，浏览器的每一次请求都是独立的。因此引入cookie来唯一标识一个用户，同时记录该用户的状态。Cookie介绍Cookie是浏览器在访问WEB服务器的某个资源时，由WEB服务器在HTTP响应头附带传送给浏览器的一个小文本文件">
+<meta name="twitter:image" content="https://oscimg.oschina.net/oscnet/e83a49572444fa49eeaf384afbf3f49e518.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="布吉的博客" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://yulang.xyz/2019/09/22/本地化存储-cookie/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>本地化存储:cookie | 布吉的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">布吉的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">记录从这一刻开始</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/404/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>其他</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yulang.xyz/2019/09/22/本地化存储-cookie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="布吉">
+      <meta itemprop="description" content="记录从这一刻开始">
+      <meta itemprop="image" content="/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="布吉的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">本地化存储:cookie
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+         
+
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-22 09:53:31 / 修改时间：10:23:13" itemprop="dateCreated datePublished" datetime="2019-09-22T09:53:31+08:00">2019-09-22</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/本地化存储-Cookie/" itemprop="url" rel="index"><span itemprop="name">本地化存储 - Cookie</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>cookie： n. 饼干；小甜点</p>
+<h4 id="为什么会引入Cookie（在客户端保持http状态）"><a href="#为什么会引入Cookie（在客户端保持http状态）" class="headerlink" title="为什么会引入Cookie（在客户端保持http状态）"></a>为什么会引入Cookie（在客户端保持http状态）</h4><h6 id="因为http协议是一种无状态协议，web服务器本身不能识别出哪些请求是同一个服务器发送的，浏览器的每一次请求都是独立的。因此引入cookie来唯一标识一个用户，同时记录该用户的状态。"><a href="#因为http协议是一种无状态协议，web服务器本身不能识别出哪些请求是同一个服务器发送的，浏览器的每一次请求都是独立的。因此引入cookie来唯一标识一个用户，同时记录该用户的状态。" class="headerlink" title="因为http协议是一种无状态协议，web服务器本身不能识别出哪些请求是同一个服务器发送的，浏览器的每一次请求都是独立的。因此引入cookie来唯一标识一个用户，同时记录该用户的状态。"></a>因为http协议是一种无状态协议，web服务器本身不能识别出哪些请求是同一个服务器发送的，浏览器的每一次请求都是独立的。因此引入cookie来唯一标识一个用户，同时记录该用户的状态。</h6><h4 id="Cookie介绍"><a href="#Cookie介绍" class="headerlink" title="Cookie介绍"></a>Cookie介绍</h4><h6 id="Cookie是浏览器在访问WEB服务器的某个资源时，由WEB服务器在HTTP响应头附带传送给浏览器的一个小文本文件。"><a href="#Cookie是浏览器在访问WEB服务器的某个资源时，由WEB服务器在HTTP响应头附带传送给浏览器的一个小文本文件。" class="headerlink" title="Cookie是浏览器在访问WEB服务器的某个资源时，由WEB服务器在HTTP响应头附带传送给浏览器的一个小文本文件。"></a>Cookie是浏览器在访问WEB服务器的某个资源时，由WEB服务器在HTTP响应头附带传送给浏览器的一个小文本文件。</h6><ol>
+<li>一旦WEB浏览器保存了某个cookie,那么它在以后每次访问该服务器时，都会带在HTTP请求头将这个cookie回传给web服务器。</li>
+<li>一个cookie只能标识一种信息，它至少含有一个标识该信息的名称（Name）和设置值。</li>
+<li>一个WEB站点可以给一个WEB服务器发送多个cookie,一个WEB浏览器也可以存储多个WEB站点提供的Cookie</li>
+<li>浏览器一般只允许存放300个Cookie，每个站点最多存放20个Cookie，每个Cookie的大小限制为4KB。<br><img src="https://oscimg.oschina.net/oscnet/e83a49572444fa49eeaf384afbf3f49e518.jpg" alt><h4 id="Cookie底层原理"><a href="#Cookie底层原理" class="headerlink" title="Cookie底层原理"></a>Cookie底层原理</h4></li>
+</ol>
+<h6 id="WEB服务器通过HTTP响应信息中增加Set-cookie字段将cookie信息发送给浏览器，浏览器则通过在HTTP请求中增加cookie请求字段将cookie回传给Web服务器。服务器根据cookie辨别用户，也可以修改cookie内容。"><a href="#WEB服务器通过HTTP响应信息中增加Set-cookie字段将cookie信息发送给浏览器，浏览器则通过在HTTP请求中增加cookie请求字段将cookie回传给Web服务器。服务器根据cookie辨别用户，也可以修改cookie内容。" class="headerlink" title="WEB服务器通过HTTP响应信息中增加Set-cookie字段将cookie信息发送给浏览器，浏览器则通过在HTTP请求中增加cookie请求字段将cookie回传给Web服务器。服务器根据cookie辨别用户，也可以修改cookie内容。"></a><strong>WEB服务器通过HTTP响应信息中增加Set-cookie字段将cookie信息发送给浏览器，浏览器则通过在HTTP请求中增加cookie请求字段将cookie回传给Web服务器。服务器根据cookie辨别用户，也可以修改cookie内容。</strong></h6><h6 id="存储cookie是浏览器提供的功能。cookie-其实是存储在浏览器中的纯文本，浏览器的安装目录下会专门有一个-cookie-文件夹来存放各个域下设置的cookie。"><a href="#存储cookie是浏览器提供的功能。cookie-其实是存储在浏览器中的纯文本，浏览器的安装目录下会专门有一个-cookie-文件夹来存放各个域下设置的cookie。" class="headerlink" title="[存储cookie是浏览器提供的功能。cookie 其实是存储在浏览器中的纯文本，浏览器的安装目录下会专门有一个 cookie 文件夹来存放各个域下设置的cookie。"></a>[存储cookie是浏览器提供的功能。cookie 其实是存储在浏览器中的纯文本，浏览器的安装目录下会专门有一个 cookie 文件夹来存放各个域下设置的cookie。</h6><h6 id="当网页要发http请求时，浏览器会先检查是否有相应的cookie，有则自动添加在request-header中的cookie字段中。这些是浏览器自动帮我们做的，而且每一次http请求浏览器都会自动帮我们做。这个特点很重要，因为这关系到“什么样的数据适合存储在cookie中”。"><a href="#当网页要发http请求时，浏览器会先检查是否有相应的cookie，有则自动添加在request-header中的cookie字段中。这些是浏览器自动帮我们做的，而且每一次http请求浏览器都会自动帮我们做。这个特点很重要，因为这关系到“什么样的数据适合存储在cookie中”。" class="headerlink" title="当网页要发http请求时，浏览器会先检查是否有相应的cookie，有则自动添加在request header中的cookie字段中。这些是浏览器自动帮我们做的，而且每一次http请求浏览器都会自动帮我们做。这个特点很重要，因为这关系到“什么样的数据适合存储在cookie中”。"></a>当网页要发http请求时，浏览器会先检查是否有相应的cookie，有则自动添加在request header中的cookie字段中。这些是浏览器自动帮我们做的，而且每一次http请求浏览器都会自动帮我们做。这个特点很重要，因为这关系到“什么样的数据适合存储在cookie中”。</h6><h6 id="存储在cookie中的数据，每次都会被浏览器自动放在http请求中，如果这些数据并不是每个请求都需要发给服务端的数据，浏览器这设置自动处理无疑增加了网络开销；但如果这些数据是每个请求都需要发给服务端的数据（比如身份认证信息），浏览器这设置自动处理就大大免去了重复添加操作。所以对于那设置“每次请求都要携带的信息（最典型的就是身份认证信息）”就特别适合放在cookie中，其他类型的数据就不适合了。当然cookie标准还是做了一些限制的：每个域名下的cookie-的大小最大为4KB，每个域名下的cookie数量最多为20个（但很多浏览器厂商在具体实现时支持大于20个）"><a href="#存储在cookie中的数据，每次都会被浏览器自动放在http请求中，如果这些数据并不是每个请求都需要发给服务端的数据，浏览器这设置自动处理无疑增加了网络开销；但如果这些数据是每个请求都需要发给服务端的数据（比如身份认证信息），浏览器这设置自动处理就大大免去了重复添加操作。所以对于那设置“每次请求都要携带的信息（最典型的就是身份认证信息）”就特别适合放在cookie中，其他类型的数据就不适合了。当然cookie标准还是做了一些限制的：每个域名下的cookie-的大小最大为4KB，每个域名下的cookie数量最多为20个（但很多浏览器厂商在具体实现时支持大于20个）" class="headerlink" title="存储在cookie中的数据，每次都会被浏览器自动放在http请求中，如果这些数据并不是每个请求都需要发给服务端的数据，浏览器这设置自动处理无疑增加了网络开销；但如果这些数据是每个请求都需要发给服务端的数据（比如身份认证信息），浏览器这设置自动处理就大大免去了重复添加操作。所以对于那设置“每次请求都要携带的信息（最典型的就是身份认证信息）”就特别适合放在cookie中，其他类型的数据就不适合了。当然cookie标准还是做了一些限制的：每个域名下的cookie 的大小最大为4KB，每个域名下的cookie数量最多为20个（但很多浏览器厂商在具体实现时支持大于20个）]"></a>存储在cookie中的数据，每次都会被浏览器自动放在http请求中，如果这些数据并不是每个请求都需要发给服务端的数据，浏览器这设置自动处理无疑增加了网络开销；但如果这些数据是每个请求都需要发给服务端的数据（比如身份认证信息），浏览器这设置自动处理就大大免去了重复添加操作。所以对于那设置“每次请求都要携带的信息（最典型的就是身份认证信息）”就特别适合放在cookie中，其他类型的数据就不适合了。当然cookie标准还是做了一些限制的：每个域名下的cookie 的大小最大为4KB，每个域名下的cookie数量最多为20个（但很多浏览器厂商在具体实现时支持大于20个）]</h6><p><strong>浏览器查看cookie值：application—&gt;cookie</strong></p>
+<h6 id="cookie其他特点"><a href="#cookie其他特点" class="headerlink" title="cookie其他特点"></a><strong>cookie其他特点</strong></h6><p>cookie不可跨域：就是不能在不同的域名下用，每个cookie都会绑定单一的域名</p>
+<p><img src="https://oscimg.oschina.net/oscnet/bd4473268ed5f797401cfe38b1082e565b6.jpg" alt></p>
+<h4 id="Cookie的特点"><a href="#Cookie的特点" class="headerlink" title="Cookie的特点"></a>Cookie的特点</h4><ul>
+<li>cookie 主要用于标识用户身份，而 Web Storage 主要用于浏览器端存储数据;</li>
+<li>一般情况下浏览器端不会修改 cookie，但会频繁操作 Web Storage(sessionStorage,localStorage)<ul>
+<li>cookie 最大允许存储 4KB，而 Web Storage 每一个源支持 5MB(视浏览器而定，最小保守是 5MB);</li>
+</ul>
+</li>
+<li>cookie 每次都会包含在 http 请求中，而 Web Storage 由脚本控制选择性提交;</li>
+<li>cookie 在设置的有效期内都有效，sessionStorage 在当前页面关闭前有效，localStorage 长期有效，直到 用户删除它或通过脚本删除它</li>
+<li>sessionStorage 不能共享，localStorage 在同源文档之间共享， cookie 在同源且符合 path 规则的文档之间共享</li>
+</ul>
+<h4 id="Cookie的优点"><a href="#Cookie的优点" class="headerlink" title="Cookie的优点"></a>Cookie的优点</h4><ul>
+<li>通过加密和安全传输技术(SSL),减少cookie被破解的可能</li>
+<li>不需要服务器资源 直接存储在本地<h4 id="Cookie-的缺点"><a href="#Cookie-的缺点" class="headerlink" title="Cookie 的缺点"></a>Cookie 的缺点</h4></li>
+<li>每个域的cookie总数是有限的，不同浏览器之间各有不同。<h6 id="Firefox-限制每个域最多-50-个-cookie。"><a href="#Firefox-限制每个域最多-50-个-cookie。" class="headerlink" title="Firefox 限制每个域最多 50 个 cookie。"></a>Firefox 限制每个域最多 50 个 cookie。</h6><h6 id="Safari-和-Chrome-对于每个域的-cookie-数量限制没有硬性规定-Safari-和-Chrome-对于每个域的-cookie-数量限制没有硬性规定"><a href="#Safari-和-Chrome-对于每个域的-cookie-数量限制没有硬性规定-Safari-和-Chrome-对于每个域的-cookie-数量限制没有硬性规定" class="headerlink" title="Safari 和 Chrome 对于每个域的 cookie 数量限制没有硬性规定 Safari 和 Chrome 对于每个域的 cookie 数量限制没有硬性规定"></a>Safari 和 Chrome 对于每个域的 cookie 数量限制没有硬性规定 Safari 和 Chrome 对于每个域的 cookie 数量限制没有硬性规定</h6><ul>
+<li>cookie大小的限制<h6 id="大多数浏览器4096B的长度限制，为了兼容多种浏览器，最好将长度限制在4095B以内-每个domain最多只能有20条cookie。"><a href="#大多数浏览器4096B的长度限制，为了兼容多种浏览器，最好将长度限制在4095B以内-每个domain最多只能有20条cookie。" class="headerlink" title="大多数浏览器4096B的长度限制，为了兼容多种浏览器，最好将长度限制在4095B以内.每个domain最多只能有20条cookie。"></a>大多数浏览器4096B的长度限制，为了兼容多种浏览器，最好将长度限制在4095B以内.每个domain最多只能有20条cookie。</h6></li>
+</ul>
+</li>
+<li>由于所有的 cookie 都会由浏览器作为请求头发送，所以在 cookie 中存储大量信息会影响到特定域的 请求性能。<h6 id="cookie-信息越大，完成对服务器请求的时间也就越长。尽管浏览器对-cookie-进行了大小限制，-不过最好还是尽可能在-cookie-中少存储信息，以避免影响性能"><a href="#cookie-信息越大，完成对服务器请求的时间也就越长。尽管浏览器对-cookie-进行了大小限制，-不过最好还是尽可能在-cookie-中少存储信息，以避免影响性能" class="headerlink" title="cookie 信息越大，完成对服务器请求的时间也就越长。尽管浏览器对 cookie 进行了大小限制， 不过最好还是尽可能在 cookie 中少存储信息，以避免影响性能"></a>cookie 信息越大，完成对服务器请求的时间也就越长。尽管浏览器对 cookie 进行了大小限制， 不过最好还是尽可能在 cookie 中少存储信息，以避免影响性能</h6><h4 id="Cookie的参数"><a href="#Cookie的参数" class="headerlink" title="Cookie的参数"></a>Cookie的参数</h4><img src="https://oscimg.oschina.net/oscnet/4be04cf4d54b978385d8d5ce40b9cf4487c.jpg" alt><h6 id="name：-cookie的名字-必须"><a href="#name：-cookie的名字-必须" class="headerlink" title="name： cookie的名字 [必须]"></a>name： cookie的名字 [必须]</h6><h6 id="value：-cookie值-必须-（由于cookie规定是名称-值是不允许包含分号，逗号，空格的，所以为了不给用户到来麻烦，考虑服务器的兼容性，任何存储cookie的数据都应该被编码。）value：-cookie值-必须-（由于cookie规定是名称-值是不允许包含分号，逗号，空格的，所以为了不给用户到来麻烦，考虑服务器的兼容性，任何存储cookie的数据都应该被编码。）"><a href="#value：-cookie值-必须-（由于cookie规定是名称-值是不允许包含分号，逗号，空格的，所以为了不给用户到来麻烦，考虑服务器的兼容性，任何存储cookie的数据都应该被编码。）value：-cookie值-必须-（由于cookie规定是名称-值是不允许包含分号，逗号，空格的，所以为了不给用户到来麻烦，考虑服务器的兼容性，任何存储cookie的数据都应该被编码。）" class="headerlink" title="value：    cookie值      [必须]（由于cookie规定是名称/值是不允许包含分号，逗号，空格的，所以为了不给用户到来麻烦，考虑服务器的兼容性，任何存储cookie的数据都应该被编码。）value：    cookie值      [必须]（由于cookie规定是名称/值是不允许包含分号，逗号，空格的，所以为了不给用户到来麻烦，考虑服务器的兼容性，任何存储cookie的数据都应该被编码。）"></a>value：    cookie值      [必须]（由于cookie规定是名称/值是不允许包含分号，逗号，空格的，所以为了不给用户到来麻烦，考虑服务器的兼容性，任何存储cookie的数据都应该被编码。）value：    cookie值      [必须]（由于cookie规定是名称/值是不允许包含分号，逗号，空格的，所以为了不给用户到来麻烦，考虑服务器的兼容性，任何存储cookie的数据都应该被编码。）</h6>domain：    cookie绑定的域名。[可选,如果没有设置，自动绑定到执行语句的当前域;注:同一个域名下的二级域名也是不可以交换使用cookie的，比如<a href="http://www.baidu.com和image.baidu.com也是不可以公用的]" target="_blank" rel="noopener">www.baidu.com和image.baidu.com也是不可以公用的]</a><h6 id="出于安全考虑，网站不能访问由其他域所创建的cookie【"><a href="#出于安全考虑，网站不能访问由其他域所创建的cookie【" class="headerlink" title="出于安全考虑，网站不能访问由其他域所创建的cookie【"></a>出于安全考虑，网站不能访问由其他域所创建的cookie【</h6><img src="https://oscimg.oschina.net/oscnet/e1ccfab0a921d83495fed1e5f9008578faf.jpg" alt><br><a href="https://blog.csdn.net/supermao1013/article/details/83827310" target="_blank" rel="noopener">https://blog.csdn.net/supermao1013/article/details/83827310</a></li>
+</ul>
+<ol>
+<li>在setcookie中省略domain参数，那么domain默认为当前域名</li>
+<li>domain参数可以设置父域名，如果设置cookie在子域名；父级访问不到cookie</li>
+<li>如果cookie设置为顶级域名，则全部的域名，包括顶级域名、二级域名、三级域名等，都可以共享该cookie</li>
+<li>如果cookie设置为当前域名，则当前域名及其下面的所有子域名可以共享该cookie</li>
+<li>二级域名能读取设置了domain为顶级域名或者自身的cookie，不能读取其他二级域名domain的cookie。例如：要想cookie在多个二级域名中共享，需要设置domain为顶级域名，这样就可以在所有二级域名里面或者到这个cookie的值<br>】<h6 id="域名区分"><a href="#域名区分" class="headerlink" title="域名区分"></a><strong>域名区分</strong></h6><img src="https://oscimg.oschina.net/oscnet/85595dc2a53f01d73fad2b7c9fc8ec8418d.jpg" alt></li>
+</ol>
+<p>path：    服务器路径 ，当路径设置为/blog时，会给/blog路径下绑定cookie(可选)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认路径</span></span><br><span class="line">www.baidu.com</span><br><span class="line"><span class="comment">//blog路径</span></span><br><span class="line">www.baidu.com/blog</span><br></pre></td></tr></table></figure></p>
+<h6 id="Expire-Max-Age：-Cookie有效期-可选"><a href="#Expire-Max-Age：-Cookie有效期-可选" class="headerlink" title="Expire/Max-Age：    Cookie有效期(可选)"></a>Expire/Max-Age：    Cookie有效期(可选)</h6><h6 id="Size-cookie大小-可选"><a href="#Size-cookie大小-可选" class="headerlink" title="Size:cookie大小 (可选)"></a>Size:cookie大小 (可选)</h6><h6 id="HttpOnly-设置为true-就不能通过js脚本来获取cookie的值，能防止xss攻击-可选"><a href="#HttpOnly-设置为true-就不能通过js脚本来获取cookie的值，能防止xss攻击-可选" class="headerlink" title="HttpOnly:设置为true,就不能通过js脚本来获取cookie的值，能防止xss攻击(可选)"></a>HttpOnly:设置为true,就不能通过js脚本来获取cookie的值，能防止xss攻击(可选)</h6><h6 id="试想：如果任何-cookie-都能被客户端通过document-cookie获取会发生什么可怕的事情。当我们的网页遭受了-XSS-攻击，有一段恶意的script脚本插到了网页中。这段script脚本做的事情是：通过document-cookie读取了用户身份验证相关的-cookie，并将这些-cookie-发送到了攻击者的服务器。攻击者轻而易举就拿到了用户身份验证信息，于是就可以摇摇大摆地冒充此用户访问你的服务器了（因为攻击者有合法的用户身份验证信息，所以会通过你服务器的验证）。"><a href="#试想：如果任何-cookie-都能被客户端通过document-cookie获取会发生什么可怕的事情。当我们的网页遭受了-XSS-攻击，有一段恶意的script脚本插到了网页中。这段script脚本做的事情是：通过document-cookie读取了用户身份验证相关的-cookie，并将这些-cookie-发送到了攻击者的服务器。攻击者轻而易举就拿到了用户身份验证信息，于是就可以摇摇大摆地冒充此用户访问你的服务器了（因为攻击者有合法的用户身份验证信息，所以会通过你服务器的验证）。" class="headerlink" title="[试想：如果任何 cookie 都能被客户端通过document.cookie获取会发生什么可怕的事情。当我们的网页遭受了 XSS 攻击，有一段恶意的script脚本插到了网页中。这段script脚本做的事情是：通过document.cookie读取了用户身份验证相关的 cookie，并将这些 cookie 发送到了攻击者的服务器。攻击者轻而易举就拿到了用户身份验证信息，于是就可以摇摇大摆地冒充此用户访问你的服务器了（因为攻击者有合法的用户身份验证信息，所以会通过你服务器的验证）。]"></a>[试想：如果任何 cookie 都能被客户端通过document.cookie获取会发生什么可怕的事情。当我们的网页遭受了 XSS 攻击，有一段恶意的script脚本插到了网页中。这段script脚本做的事情是：通过document.cookie读取了用户身份验证相关的 cookie，并将这些 cookie 发送到了攻击者的服务器。攻击者轻而易举就拿到了用户身份验证信息，于是就可以摇摇大摆地冒充此用户访问你的服务器了（因为攻击者有合法的用户身份验证信息，所以会通过你服务器的验证）。]</h6><h6 id="secure：-规定是否通过安全的-HTTPS-连接来传输-cookie-可选"><a href="#secure：-规定是否通过安全的-HTTPS-连接来传输-cookie-可选" class="headerlink" title="secure：    规定是否通过安全的 HTTPS 连接来传输 cookie(可选)"></a>secure：    规定是否通过安全的 HTTPS 连接来传输 cookie(可选)</h6><h4 id="客户端操作cookie值（document-cookie可以对cookie进行读写）"><a href="#客户端操作cookie值（document-cookie可以对cookie进行读写）" class="headerlink" title="客户端操作cookie值（document.cookie可以对cookie进行读写）"></a>客户端操作cookie值（document.cookie可以对cookie进行读写）</h4><h6 id="客户端可以设置cookie-的下列选项：expires、domain、path、secure（有条件：只有在https协议的网页中，客户端设置secure类型的-cookie-才能成功），但无法设置HttpOnly选项。"><a href="#客户端可以设置cookie-的下列选项：expires、domain、path、secure（有条件：只有在https协议的网页中，客户端设置secure类型的-cookie-才能成功），但无法设置HttpOnly选项。" class="headerlink" title="客户端可以设置cookie 的下列选项：expires、domain、path、secure（有条件：只有在https协议的网页中，客户端设置secure类型的 cookie 才能成功），但无法设置HttpOnly选项。"></a>客户端可以设置cookie 的下列选项：expires、domain、path、secure（有条件：只有在https协议的网页中，客户端设置secure类型的 cookie 才能成功），但无法设置HttpOnly选项。</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//读取浏览器中的cookie</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.cookie);</span><br><span class="line"><span class="comment">//写入cookie</span></span><br><span class="line"><span class="built_in">document</span>.cookie=<span class="string">'myname=laihuamin;path=/;domain=.baidu.com'</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="服务端设置cookie值"><a href="#服务端设置cookie值" class="headerlink" title="服务端设置cookie值"></a>服务端设置cookie值</h4><h6 id="不管你是请求一个资源文件（如-html-js-css-图片），还是发送一个ajax请求，服务端都会返回response。而response-header中有一项叫set-cookie，是服务端专门用来设置cookie的；"><a href="#不管你是请求一个资源文件（如-html-js-css-图片），还是发送一个ajax请求，服务端都会返回response。而response-header中有一项叫set-cookie，是服务端专门用来设置cookie的；" class="headerlink" title="不管你是请求一个资源文件（如 html/js/css/图片），还是发送一个ajax请求，服务端都会返回response。而response header中有一项叫set-cookie，是服务端专门用来设置cookie的；"></a>不管你是请求一个资源文件（如 html/js/css/图片），还是发送一个ajax请求，服务端都会返回response。而response header中有一项叫set-cookie，是服务端专门用来设置cookie的；</h6><h6 id="服务端返回的response-header中有5个set-cookie字段，每个字段对应一个cookie（注意不能将多个cookie放在一个set-cookie字段中），set-cookie字段的值就是普通的字符串，每个cookie还设置了相关属性选项。"><a href="#服务端返回的response-header中有5个set-cookie字段，每个字段对应一个cookie（注意不能将多个cookie放在一个set-cookie字段中），set-cookie字段的值就是普通的字符串，每个cookie还设置了相关属性选项。" class="headerlink" title="服务端返回的response header中有5个set-cookie字段，每个字段对应一个cookie（注意不能将多个cookie放在一个set-cookie字段中），set-cookie字段的值就是普通的字符串，每个cookie还设置了相关属性选项。"></a>服务端返回的response header中有5个set-cookie字段，每个字段对应一个cookie（注意不能将多个cookie放在一个set-cookie字段中），set-cookie字段的值就是普通的字符串，每个cookie还设置了相关属性选项。</h6><h6 id="一个set-Cookie字段只能设置一个cookie，当你要想设置多个-cookie，需要添加同样多的set-Cookie字段。"><a href="#一个set-Cookie字段只能设置一个cookie，当你要想设置多个-cookie，需要添加同样多的set-Cookie字段。" class="headerlink" title="一个set-Cookie字段只能设置一个cookie，当你要想设置多个 cookie，需要添加同样多的set-Cookie字段。"></a>一个set-Cookie字段只能设置一个cookie，当你要想设置多个 cookie，需要添加同样多的set-Cookie字段。</h6><h6 id="服务端可以设置cookie-的所有选项：expires、domain、path、secure、HttpOnly"><a href="#服务端可以设置cookie-的所有选项：expires、domain、path、secure、HttpOnly" class="headerlink" title="服务端可以设置cookie 的所有选项：expires、domain、path、secure、HttpOnly"></a>服务端可以设置cookie 的所有选项：expires、domain、path、secure、HttpOnly</h6><p><img src="https://oscimg.oschina.net/oscnet/d1fcbe326d02945e599e774120850874ad1.jpg" alt></p>
+<p><img src="https://oscimg.oschina.net/oscnet/32eb02927b58e745f29567b1e4a7bd857fb.jpg" alt></p>
+<h4 id="cookie的应用"><a href="#cookie的应用" class="headerlink" title="cookie的应用"></a>cookie的应用</h4><ol>
+<li>购物车</li>
+<li>自动登录（登录账号时自动登录）</li>
+<li>广告（记录你最近浏览过的，买过的类似东西，都是通过cookie记录的）</li>
+<li>记住登录状态</li>
+<li>单点登陆 ( Single Sign On, SSO)，是目前比较流行的企业业务整合的解决方案之一. <h6 id="简单的说-就是在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。它包括可以将这次主要的登录映射到其他应用中用于同一个用户的登录的机制。"><a href="#简单的说-就是在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。它包括可以将这次主要的登录映射到其他应用中用于同一个用户的登录的机制。" class="headerlink" title="简单的说, 就是在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。它包括可以将这次主要的登录映射到其他应用中用于同一个用户的登录的机制。"></a>简单的说, 就是在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。它包括可以将这次主要的登录映射到其他应用中用于同一个用户的登录的机制。</h6></li>
+<li>显示上次浏览过的商品<h6 id="通过-Cookie-帮助商家向之前访问过其网站、购买过其产品或使用过其应用的您投放广告，并根据您的这些活动向他们推荐产品和服务。此外，我们还可以通过-Cookie-限制向您投放广告的次数，以便您不会重复看到同一条广告。-通过-Cookie-帮助商家向之前访问过其网站、购买过其产品或使用过其应用的您投放广告，并根据您的这些活动向他们推荐产品和服务。此外，我们还可以通过-Cookie-限制向您投放广告的次数，以便您不会重复看到同一条广告。"><a href="#通过-Cookie-帮助商家向之前访问过其网站、购买过其产品或使用过其应用的您投放广告，并根据您的这些活动向他们推荐产品和服务。此外，我们还可以通过-Cookie-限制向您投放广告的次数，以便您不会重复看到同一条广告。-通过-Cookie-帮助商家向之前访问过其网站、购买过其产品或使用过其应用的您投放广告，并根据您的这些活动向他们推荐产品和服务。此外，我们还可以通过-Cookie-限制向您投放广告的次数，以便您不会重复看到同一条广告。" class="headerlink" title="通过 Cookie 帮助商家向之前访问过其网站、购买过其产品或使用过其应用的您投放广告，并根据您的这些活动向他们推荐产品和服务。此外，我们还可以通过 Cookie 限制向您投放广告的次数，以便您不会重复看到同一条广告。  通过 Cookie 帮助商家向之前访问过其网站、购买过其产品或使用过其应用的您投放广告，并根据您的这些活动向他们推荐产品和服务。此外，我们还可以通过 Cookie 限制向您投放广告的次数，以便您不会重复看到同一条广告。"></a>通过 Cookie 帮助商家向之前访问过其网站、购买过其产品或使用过其应用的您投放广告，并根据您的这些活动向他们推荐产品和服务。此外，我们还可以通过 Cookie 限制向您投放广告的次数，以便您不会重复看到同一条广告。  通过 Cookie 帮助商家向之前访问过其网站、购买过其产品或使用过其应用的您投放广告，并根据您的这些活动向他们推荐产品和服务。此外，我们还可以通过 Cookie 限制向您投放广告的次数，以便您不会重复看到同一条广告。</h6><h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><h6 id="https-bubkoo-com-2014-04-21-http-cookies-explained"><a href="#https-bubkoo-com-2014-04-21-http-cookies-explained" class="headerlink" title="https://bubkoo.com/2014/04/21/http-cookies-explained/"></a><a href="https://bubkoo.com/2014/04/21/http-cookies-explained/" target="_blank" rel="noopener">https://bubkoo.com/2014/04/21/http-cookies-explained/</a></h6><h6 id="https-zhuanlan-zhihu-com-p-25834961"><a href="#https-zhuanlan-zhihu-com-p-25834961" class="headerlink" title="https://zhuanlan.zhihu.com/p/25834961"></a><a href="https://zhuanlan.zhihu.com/p/25834961" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/25834961</a></h6><h6 id="https-segmentfault-com-a-1190000004556040"><a href="#https-segmentfault-com-a-1190000004556040" class="headerlink" title="https://segmentfault.com/a/1190000004556040"></a><a href="https://segmentfault.com/a/1190000004556040" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004556040</a></h6></li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>布吉</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://yulang.xyz/2019/09/22/本地化存储-cookie/" title="本地化存储:cookie">https://yulang.xyz/2019/09/22/本地化存储-cookie/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+    <div>
+      
+         <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+      </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/本地化存储/" rel="tag"><i class="fa fa-tag"></i> 本地化存储</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/22/本地化存储-Storage/" rel="next" title="本地化存储:Storage">
+                <i class="fa fa-chevron-left"></i> 本地化存储:Storage
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+            <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/logo.jpg" alt="布吉">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">布吉</p>
+              <div class="site-description motion-element" itemprop="description">记录从这一刻开始</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:1768788178@qq.com" title="E-Mail &rarr; mailto:1768788178@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么会引入Cookie（在客户端保持http状态）"><span class="nav-number">1.</span> <span class="nav-text">为什么会引入Cookie（在客户端保持http状态）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#因为http协议是一种无状态协议，web服务器本身不能识别出哪些请求是同一个服务器发送的，浏览器的每一次请求都是独立的。因此引入cookie来唯一标识一个用户，同时记录该用户的状态。"><span class="nav-number">1.0.1.</span> <span class="nav-text">因为http协议是一种无状态协议，web服务器本身不能识别出哪些请求是同一个服务器发送的，浏览器的每一次请求都是独立的。因此引入cookie来唯一标识一个用户，同时记录该用户的状态。</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie介绍"><span class="nav-number">2.</span> <span class="nav-text">Cookie介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Cookie是浏览器在访问WEB服务器的某个资源时，由WEB服务器在HTTP响应头附带传送给浏览器的一个小文本文件。"><span class="nav-number">2.0.1.</span> <span class="nav-text">Cookie是浏览器在访问WEB服务器的某个资源时，由WEB服务器在HTTP响应头附带传送给浏览器的一个小文本文件。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie底层原理"><span class="nav-number">3.</span> <span class="nav-text">Cookie底层原理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#WEB服务器通过HTTP响应信息中增加Set-cookie字段将cookie信息发送给浏览器，浏览器则通过在HTTP请求中增加cookie请求字段将cookie回传给Web服务器。服务器根据cookie辨别用户，也可以修改cookie内容。"><span class="nav-number">3.0.1.</span> <span class="nav-text">WEB服务器通过HTTP响应信息中增加Set-cookie字段将cookie信息发送给浏览器，浏览器则通过在HTTP请求中增加cookie请求字段将cookie回传给Web服务器。服务器根据cookie辨别用户，也可以修改cookie内容。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#存储cookie是浏览器提供的功能。cookie-其实是存储在浏览器中的纯文本，浏览器的安装目录下会专门有一个-cookie-文件夹来存放各个域下设置的cookie。"><span class="nav-number">3.0.2.</span> <span class="nav-text">[存储cookie是浏览器提供的功能。cookie 其实是存储在浏览器中的纯文本，浏览器的安装目录下会专门有一个 cookie 文件夹来存放各个域下设置的cookie。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#当网页要发http请求时，浏览器会先检查是否有相应的cookie，有则自动添加在request-header中的cookie字段中。这些是浏览器自动帮我们做的，而且每一次http请求浏览器都会自动帮我们做。这个特点很重要，因为这关系到“什么样的数据适合存储在cookie中”。"><span class="nav-number">3.0.3.</span> <span class="nav-text">当网页要发http请求时，浏览器会先检查是否有相应的cookie，有则自动添加在request header中的cookie字段中。这些是浏览器自动帮我们做的，而且每一次http请求浏览器都会自动帮我们做。这个特点很重要，因为这关系到“什么样的数据适合存储在cookie中”。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#存储在cookie中的数据，每次都会被浏览器自动放在http请求中，如果这些数据并不是每个请求都需要发给服务端的数据，浏览器这设置自动处理无疑增加了网络开销；但如果这些数据是每个请求都需要发给服务端的数据（比如身份认证信息），浏览器这设置自动处理就大大免去了重复添加操作。所以对于那设置“每次请求都要携带的信息（最典型的就是身份认证信息）”就特别适合放在cookie中，其他类型的数据就不适合了。当然cookie标准还是做了一些限制的：每个域名下的cookie-的大小最大为4KB，每个域名下的cookie数量最多为20个（但很多浏览器厂商在具体实现时支持大于20个）"><span class="nav-number">3.0.4.</span> <span class="nav-text">存储在cookie中的数据，每次都会被浏览器自动放在http请求中，如果这些数据并不是每个请求都需要发给服务端的数据，浏览器这设置自动处理无疑增加了网络开销；但如果这些数据是每个请求都需要发给服务端的数据（比如身份认证信息），浏览器这设置自动处理就大大免去了重复添加操作。所以对于那设置“每次请求都要携带的信息（最典型的就是身份认证信息）”就特别适合放在cookie中，其他类型的数据就不适合了。当然cookie标准还是做了一些限制的：每个域名下的cookie 的大小最大为4KB，每个域名下的cookie数量最多为20个（但很多浏览器厂商在具体实现时支持大于20个）]</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cookie其他特点"><span class="nav-number">3.0.5.</span> <span class="nav-text">cookie其他特点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie的特点"><span class="nav-number">4.</span> <span class="nav-text">Cookie的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie的优点"><span class="nav-number">5.</span> <span class="nav-text">Cookie的优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie-的缺点"><span class="nav-number">6.</span> <span class="nav-text">Cookie 的缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Firefox-限制每个域最多-50-个-cookie。"><span class="nav-number">6.0.1.</span> <span class="nav-text">Firefox 限制每个域最多 50 个 cookie。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Safari-和-Chrome-对于每个域的-cookie-数量限制没有硬性规定-Safari-和-Chrome-对于每个域的-cookie-数量限制没有硬性规定"><span class="nav-number">6.0.2.</span> <span class="nav-text">Safari 和 Chrome 对于每个域的 cookie 数量限制没有硬性规定 Safari 和 Chrome 对于每个域的 cookie 数量限制没有硬性规定</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#大多数浏览器4096B的长度限制，为了兼容多种浏览器，最好将长度限制在4095B以内-每个domain最多只能有20条cookie。"><span class="nav-number">6.0.3.</span> <span class="nav-text">大多数浏览器4096B的长度限制，为了兼容多种浏览器，最好将长度限制在4095B以内.每个domain最多只能有20条cookie。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cookie-信息越大，完成对服务器请求的时间也就越长。尽管浏览器对-cookie-进行了大小限制，-不过最好还是尽可能在-cookie-中少存储信息，以避免影响性能"><span class="nav-number">6.0.4.</span> <span class="nav-text">cookie 信息越大，完成对服务器请求的时间也就越长。尽管浏览器对 cookie 进行了大小限制， 不过最好还是尽可能在 cookie 中少存储信息，以避免影响性能</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie的参数"><span class="nav-number">7.</span> <span class="nav-text">Cookie的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#name：-cookie的名字-必须"><span class="nav-number">7.0.1.</span> <span class="nav-text">name： cookie的名字 [必须]</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#value：-cookie值-必须-（由于cookie规定是名称-值是不允许包含分号，逗号，空格的，所以为了不给用户到来麻烦，考虑服务器的兼容性，任何存储cookie的数据都应该被编码。）value：-cookie值-必须-（由于cookie规定是名称-值是不允许包含分号，逗号，空格的，所以为了不给用户到来麻烦，考虑服务器的兼容性，任何存储cookie的数据都应该被编码。）"><span class="nav-number">7.0.2.</span> <span class="nav-text">value：    cookie值      [必须]（由于cookie规定是名称/值是不允许包含分号，逗号，空格的，所以为了不给用户到来麻烦，考虑服务器的兼容性，任何存储cookie的数据都应该被编码。）value：    cookie值      [必须]（由于cookie规定是名称/值是不允许包含分号，逗号，空格的，所以为了不给用户到来麻烦，考虑服务器的兼容性，任何存储cookie的数据都应该被编码。）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#出于安全考虑，网站不能访问由其他域所创建的cookie【"><span class="nav-number">7.0.3.</span> <span class="nav-text">出于安全考虑，网站不能访问由其他域所创建的cookie【</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#域名区分"><span class="nav-number">7.0.4.</span> <span class="nav-text">域名区分</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Expire-Max-Age：-Cookie有效期-可选"><span class="nav-number">7.0.5.</span> <span class="nav-text">Expire/Max-Age：    Cookie有效期(可选)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Size-cookie大小-可选"><span class="nav-number">7.0.6.</span> <span class="nav-text">Size:cookie大小 (可选)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#HttpOnly-设置为true-就不能通过js脚本来获取cookie的值，能防止xss攻击-可选"><span class="nav-number">7.0.7.</span> <span class="nav-text">HttpOnly:设置为true,就不能通过js脚本来获取cookie的值，能防止xss攻击(可选)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#试想：如果任何-cookie-都能被客户端通过document-cookie获取会发生什么可怕的事情。当我们的网页遭受了-XSS-攻击，有一段恶意的script脚本插到了网页中。这段script脚本做的事情是：通过document-cookie读取了用户身份验证相关的-cookie，并将这些-cookie-发送到了攻击者的服务器。攻击者轻而易举就拿到了用户身份验证信息，于是就可以摇摇大摆地冒充此用户访问你的服务器了（因为攻击者有合法的用户身份验证信息，所以会通过你服务器的验证）。"><span class="nav-number">7.0.8.</span> <span class="nav-text">[试想：如果任何 cookie 都能被客户端通过document.cookie获取会发生什么可怕的事情。当我们的网页遭受了 XSS 攻击，有一段恶意的script脚本插到了网页中。这段script脚本做的事情是：通过document.cookie读取了用户身份验证相关的 cookie，并将这些 cookie 发送到了攻击者的服务器。攻击者轻而易举就拿到了用户身份验证信息，于是就可以摇摇大摆地冒充此用户访问你的服务器了（因为攻击者有合法的用户身份验证信息，所以会通过你服务器的验证）。]</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#secure：-规定是否通过安全的-HTTPS-连接来传输-cookie-可选"><span class="nav-number">7.0.9.</span> <span class="nav-text">secure：    规定是否通过安全的 HTTPS 连接来传输 cookie(可选)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#客户端操作cookie值（document-cookie可以对cookie进行读写）"><span class="nav-number">8.</span> <span class="nav-text">客户端操作cookie值（document.cookie可以对cookie进行读写）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#客户端可以设置cookie-的下列选项：expires、domain、path、secure（有条件：只有在https协议的网页中，客户端设置secure类型的-cookie-才能成功），但无法设置HttpOnly选项。"><span class="nav-number">8.0.1.</span> <span class="nav-text">客户端可以设置cookie 的下列选项：expires、domain、path、secure（有条件：只有在https协议的网页中，客户端设置secure类型的 cookie 才能成功），但无法设置HttpOnly选项。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务端设置cookie值"><span class="nav-number">9.</span> <span class="nav-text">服务端设置cookie值</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#不管你是请求一个资源文件（如-html-js-css-图片），还是发送一个ajax请求，服务端都会返回response。而response-header中有一项叫set-cookie，是服务端专门用来设置cookie的；"><span class="nav-number">9.0.1.</span> <span class="nav-text">不管你是请求一个资源文件（如 html/js/css/图片），还是发送一个ajax请求，服务端都会返回response。而response header中有一项叫set-cookie，是服务端专门用来设置cookie的；</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#服务端返回的response-header中有5个set-cookie字段，每个字段对应一个cookie（注意不能将多个cookie放在一个set-cookie字段中），set-cookie字段的值就是普通的字符串，每个cookie还设置了相关属性选项。"><span class="nav-number">9.0.2.</span> <span class="nav-text">服务端返回的response header中有5个set-cookie字段，每个字段对应一个cookie（注意不能将多个cookie放在一个set-cookie字段中），set-cookie字段的值就是普通的字符串，每个cookie还设置了相关属性选项。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#一个set-Cookie字段只能设置一个cookie，当你要想设置多个-cookie，需要添加同样多的set-Cookie字段。"><span class="nav-number">9.0.3.</span> <span class="nav-text">一个set-Cookie字段只能设置一个cookie，当你要想设置多个 cookie，需要添加同样多的set-Cookie字段。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#服务端可以设置cookie-的所有选项：expires、domain、path、secure、HttpOnly"><span class="nav-number">9.0.4.</span> <span class="nav-text">服务端可以设置cookie 的所有选项：expires、domain、path、secure、HttpOnly</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie的应用"><span class="nav-number">10.</span> <span class="nav-text">cookie的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#简单的说-就是在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。它包括可以将这次主要的登录映射到其他应用中用于同一个用户的登录的机制。"><span class="nav-number">10.0.1.</span> <span class="nav-text">简单的说, 就是在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。它包括可以将这次主要的登录映射到其他应用中用于同一个用户的登录的机制。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#通过-Cookie-帮助商家向之前访问过其网站、购买过其产品或使用过其应用的您投放广告，并根据您的这些活动向他们推荐产品和服务。此外，我们还可以通过-Cookie-限制向您投放广告的次数，以便您不会重复看到同一条广告。-通过-Cookie-帮助商家向之前访问过其网站、购买过其产品或使用过其应用的您投放广告，并根据您的这些活动向他们推荐产品和服务。此外，我们还可以通过-Cookie-限制向您投放广告的次数，以便您不会重复看到同一条广告。"><span class="nav-number">10.0.2.</span> <span class="nav-text">通过 Cookie 帮助商家向之前访问过其网站、购买过其产品或使用过其应用的您投放广告，并根据您的这些活动向他们推荐产品和服务。此外，我们还可以通过 Cookie 限制向您投放广告的次数，以便您不会重复看到同一条广告。  通过 Cookie 帮助商家向之前访问过其网站、购买过其产品或使用过其应用的您投放广告，并根据您的这些活动向他们推荐产品和服务。此外，我们还可以通过 Cookie 限制向您投放广告的次数，以便您不会重复看到同一条广告。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文章"><span class="nav-number">11.</span> <span class="nav-text">参考文章</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#https-bubkoo-com-2014-04-21-http-cookies-explained"><span class="nav-number">11.0.1.</span> <span class="nav-text">https://bubkoo.com/2014/04/21/http-cookies-explained/</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#https-zhuanlan-zhihu-com-p-25834961"><span class="nav-number">11.0.2.</span> <span class="nav-text">https://zhuanlan.zhihu.com/p/25834961</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#https-segmentfault-com-a-1190000004556040"><span class="nav-number">11.0.3.</span> <span class="nav-text">https://segmentfault.com/a/1190000004556040</span></a></li></ol></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">布吉</span>
+
+  
+    <div class="theme-info">
+      <div class="powered-by"></div>
+     <span class="post-count">博客全站共20k字</span>
+    </div>
+    <span title="站点总字数"></span>
+  
+
+  
+</div>
+
+
+   <div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  <span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="150" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
